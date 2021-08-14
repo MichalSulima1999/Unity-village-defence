@@ -20,12 +20,12 @@ public class GranadeAttack : MonoBehaviour {
     }
 
     void Throw() {
-        /*Ray r = new Ray(cameraTransform.position, cameraTransform.forward);
+        Ray r = new Ray(cameraTransform.position, cameraTransform.forward);
         GameObject granade = Instantiate(granadePrefab, hand.position + cameraTransform.forward * 2, Quaternion.identity);
         GranadeController granadeController = granade.GetComponent<GranadeController>();
         granadeController.damage = playerStats.granadeDamage;
         granadeController.target = r.GetPoint(range);
 
-        playerStats.CollectGranades(-1);*/
+        playerStats.CollectGranades(-1);
     }
 }

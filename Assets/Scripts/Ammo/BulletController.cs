@@ -6,7 +6,7 @@ public class BulletController : MonoBehaviour
 {
     [SerializeField] private GameObject bulletDecal;
     [SerializeField] protected float speed = 50f;
-    [SerializeField] private float timeToDestroy = 3f;
+    [SerializeField] protected float timeToDestroy = 3f;
     [SerializeField] protected bool enemyBullet;
 
     [SerializeField] Rigidbody rbody;

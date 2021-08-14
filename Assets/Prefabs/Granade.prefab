@@ -122,17 +122,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 650689794134971452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 023a8f0222a5ca740aaf9e4ec5ab1896, type: 3}
+  m_Script: {fileID: 11500000, guid: 34894f8714d863a479c61f3d0820726e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDecal: {fileID: 4296926087123376367, guid: 4d4685ce38be677409a66ba8486fd3a9, type: 3}
-  speed: 25
-  timeToDestroy: 10
+  bulletDecal: {fileID: 0}
+  speed: 30
+  timeToDestroy: 6
   enemyBullet: 0
   rbody: {fileID: 5006485538760721838}
-  LaunchAngle: 45
-  timeToExplode: 5
-  timeToExplodeAfterCollision: 0.5
-  timeToDestroyParticles: 2
-  explosion: {fileID: 8744843918131803000, guid: 553567439ed6311418193a7ce5e967b4, type: 3}
+  LaunchAngle: 20
+  timeToExplode: 1.5
   explodeParticles: {fileID: 5043666792668576360, guid: 87b4f632b40a9c64ca1b01d917b9064c, type: 3}
+  explodeDamage: {fileID: 8744843918131803000, guid: 553567439ed6311418193a7ce5e967b4, type: 3}
