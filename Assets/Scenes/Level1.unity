@@ -794,17 +794,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138804144}
   m_Mesh: {fileID: -3262789968867269347, guid: 070db0cfd030e684eaeb7f4893d7dc3c, type: 3}
---- !u!114 &153735514 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3563795896013090176, guid: e77514508a7603747809e426769350e7, type: 3}
-  m_PrefabInstance: {fileID: 3563795895364236044}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86fc1fd85ed160f46a81c14017f824bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &164984078
 GameObject:
   m_ObjectHideFlags: 0
@@ -8532,7 +8521,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1572725305}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: ArmorUpgrade
+        m_MethodName: GranadeUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11151,55 +11140,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 1572725303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 020b452c1e7ae6b4580daefd1139e45b, type: 3}
+  m_Script: {fileID: 11500000, guid: 62f4e5af7c81d6544876ac39e9dace12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   turret:
-    pricePerLevel: 8c000000be000000
+    pricePerLevel: 6e00000082000000
     level: 0
-    statPerLevel: 190000002800000041000000
+    statPerLevel: 1e0000002d00000041000000
     levelText: {fileID: 1188056917}
     priceText: {fileID: 166591849}
     upgradeButton: {fileID: 1152814592}
-    turretHealth: c8000000e600000004010000
+    turretHealth: 640000007d000000a0000000
     turretAttackSpeed:
-    - 0.5
-    - 0.65
-    - 0.71
+    - 1.5
+    - 1.35
+    - 1.15
     turretRange:
     - 40
     - 43
-    - 44
+    - 46
   knife:
-    pricePerLevel: 6400000082000000
+    pricePerLevel: 640000007d000000
     level: 0
-    statPerLevel: 320000004100000050000000
+    statPerLevel: 32000000410000004b000000
     levelText: {fileID: 2087404731}
     priceText: {fileID: 1800499758}
     upgradeButton: {fileID: 1017177281}
   pistol:
-    pricePerLevel: 6400000087000000
+    pricePerLevel: 7800000096000000
     level: 0
-    statPerLevel: 140000001b00000023000000
+    statPerLevel: 0f0000001300000019000000
     levelText: {fileID: 1654608329}
     priceText: {fileID: 658339317}
     upgradeButton: {fileID: 1858647690}
   armor:
-    pricePerLevel: 96000000be000000
+    pricePerLevel: 7300000091000000
     level: 0
-    statPerLevel: 640000008c000000be000000
+    statPerLevel: 640000007800000091000000
     levelText: {fileID: 356097918}
     priceText: {fileID: 1891233893}
     upgradeButton: {fileID: 1562081981}
   granade:
-    pricePerLevel: 82000000a0000000
+    pricePerLevel: 82000000a5000000
     level: 0
-    statPerLevel: 28000000370000004b000000
+    statPerLevel: 4b0000006400000082000000
     levelText: {fileID: 712652095}
     priceText: {fileID: 1908566818}
     upgradeButton: {fileID: 1153517936}
-  playerStats: {fileID: 153735514}
   moneyText: {fileID: 322428330}
+  playerStats: {fileID: 3563795895364236045}
 --- !u!114 &1572725306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15129,6 +15118,17 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: bffed55ec039c4342b4cd1ca5890bbc4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e77514508a7603747809e426769350e7, type: 3}
+--- !u!114 &3563795895364236045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3563795896013090176, guid: e77514508a7603747809e426769350e7, type: 3}
+  m_PrefabInstance: {fileID: 3563795895364236044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86fc1fd85ed160f46a81c14017f824bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5842293200052196177
 GameObject:
   m_ObjectHideFlags: 0

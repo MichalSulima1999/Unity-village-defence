@@ -156,4 +156,12 @@ public class PlayerStats : MonoBehaviour
     public void UpgradeGranades(int amount) {
         granadeDamage = amount;
     }
+
+    public void UpgradeKnife(int amount) {
+        knifeDamage = amount;
+    }
+
+    public void UpgradePistol(int amount) {
+        pistolDamage = amount;
+    }
 }
