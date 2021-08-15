@@ -63,6 +63,7 @@ public class GranadeController : BulletController
         explosion.damage = damage;
         explosion.enemyBullet = enemyBullet;
 
+        Destroy(explode);
         Destroy(gameObject);
     }
 
