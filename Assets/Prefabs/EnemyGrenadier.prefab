@@ -640,7 +640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6a33aef07fc4248bbb7dbf923438fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 35
   enemyName: Grenadier
   maxHealth: 50
   moneyLoot: 25

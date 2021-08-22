@@ -13,8 +13,6 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private Image hpImage;
     private Image hpPlayerCanvas;
 
-    private bool baseDestroyed { get; set; } = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +29,29 @@ public class PlayerBase : MonoBehaviour
 
         if(currentHealth <= 0) {
             Destroy(gameObject);
-            baseDestroyed = true;
+            GameManager.GameOver = true;
         }
+    }
+
+    public void Repair(float percentage) {
+        currentHealth += (int)(percentage / 100 * maxHealth);
+
+        hpImage.fillAmount = (float)currentHealth / (float)maxHealth;
+        hpPlayerCanvas.fillAmount = hpImage.fillAmount;
+
+        if (currentHealth > maxHealth) {
+            currentHealth = maxHealth;
+        }
+    }
+
+    public bool CanRepair() {
+        if (currentHealth >= maxHealth)
+            return false;
+
+        return true;
+    }
+
+    public int HealthPercentage() {
+        return currentHealth / maxHealth;
     }
 }

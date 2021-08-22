@@ -62,6 +62,16 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void Heal(float percentage) {
+        currentHealth += (int)((percentage / 100) * maxHealth);
+
+        healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
+
+        if (currentHealth > maxHealth) {
+            currentHealth = maxHealth;
+        }
+    }
+
     public void CollectMoney(int amount) {
         money += amount;
         moneyText.text = "$" + money;
@@ -163,5 +173,9 @@ public class PlayerStats : MonoBehaviour
 
     public void UpgradePistol(int amount) {
         pistolDamage = amount;
+    }
+
+    public int GetHealthPercentage() {
+        return (int)((float)currentHealth / (float)maxHealth * 100);
     }
 }

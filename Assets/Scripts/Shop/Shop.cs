@@ -13,7 +13,18 @@ public class Shop : MonoBehaviour
 
     [SerializeField] Text moneyText;
 
+    [SerializeField] Text healCostText;
+    [SerializeField] Text repairCostText;
+    [SerializeField] Button healButton;
+    [SerializeField] Button repairButton;
+
+    [SerializeField] int repairCost = 50;
+
     [SerializeField] PlayerStats playerStats;
+
+    PlayerBase playerBase;
+
+    int healCost;
 
     private void OnEnable() {
         GameManager.ControlsLocked = true;
@@ -28,6 +39,8 @@ public class Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerBase = GameObject.FindGameObjectWithTag("Base").GetComponent<PlayerBase>();
+
         UpdateStats();
         UpdateText();
     }
@@ -38,6 +51,15 @@ public class Shop : MonoBehaviour
         CheckButton(knife);
         CheckButton(armor);
         CheckButton(granade);
+
+        CheckHealRepairButtons();
+
+        moneyText.text = "$" + playerStats.GetMoney();
+
+        healCost = 100 - playerStats.GetHealthPercentage();
+        healCostText.text = healCost + "";
+
+        repairCostText.text = repairCost + "";
     }
 
     void UpgradeItem(ShopItem item) {
@@ -54,6 +76,19 @@ public class Shop : MonoBehaviour
         } else {
             item.upgradeButton.interactable = true;
         }
+    }
+
+    void CheckHealRepairButtons() {
+        if (healCost > playerStats.GetMoney() || !playerStats.CanCollectHealth())
+            healButton.interactable = false;
+        else
+            healButton.interactable = true;
+
+        if (repairCost > playerStats.GetMoney() || !playerBase.CanRepair())
+            repairButton.interactable = false;
+        else
+            repairButton.interactable = true;
+
     }
 
     public void TurretUpgrade() {
@@ -76,6 +111,16 @@ public class Shop : MonoBehaviour
         UpgradeItem(granade);
     }
 
+    public void Heal() {
+        playerStats.Heal(100);
+        playerStats.CollectMoney(-healCost);
+    }
+
+    public void Repair() {
+        playerBase.Repair(10);
+        playerStats.CollectMoney(-repairCost);
+    }
+
     public void CloseShop() {
         gameObject.SetActive(false);
     }
@@ -95,11 +140,13 @@ public class Shop : MonoBehaviour
     void UpdateText() {
         turret.priceText.text = "$" + turret.pricePerLevel[turret.level];
         pistol.priceText.text = "$" + pistol.pricePerLevel[pistol.level];
+        knife.priceText.text = "$" + knife.pricePerLevel[knife.level];
         armor.priceText.text = "$" + armor.pricePerLevel[armor.level];
         granade.priceText.text = "$" + granade.pricePerLevel[granade.level];
 
         turret.levelText.text = turret.level + "";
         pistol.levelText.text = pistol.level + "";
+        knife.levelText.text = knife.level + "";
         armor.levelText.text = armor.level + "";
         granade.levelText.text = granade.level + "";
 

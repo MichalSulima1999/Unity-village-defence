@@ -18,7 +18,7 @@ public class Collectible : MonoBehaviour {
             switch (collectibleType) {
                 case CollectibleType.Health:
                     if (playerStats.CanCollectHealth()) {
-                        playerStats.takeDamage(-amount);
+                        playerStats.Heal(amount);
                         Destroy(gameObject);
                     }   
                     break;
