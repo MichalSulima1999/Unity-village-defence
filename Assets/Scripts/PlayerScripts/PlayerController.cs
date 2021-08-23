@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private GranadeAttack granadeAttack;
+    [SerializeField] private PauseMenu pauseMenu;
     private BuildMode buildMode;
 
     private CharacterController controller;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
     private InputAction nextRoundAction;
     private InputAction reload;
     private InputAction granadeThrow;
+    private InputAction pauseAction;
 
     private Animator animator;
     int jumpAnimation;
@@ -76,6 +78,7 @@ public class PlayerController : MonoBehaviour
         nextRoundAction = playerInput.actions["NextRound"];
         reload = playerInput.actions["Reload"];
         granadeThrow = playerInput.actions["ThrowGranade"];
+        pauseAction = playerInput.actions["Pause"];
 
         cameraTransform = Camera.main.transform;
 
@@ -98,6 +101,7 @@ public class PlayerController : MonoBehaviour
         nextRoundAction.performed += _ => enemySpawner.NextRound();
         reload.performed += _ => playerStats.Reload();
         granadeThrow.performed += _ => ThrowGranade();
+        pauseAction.performed += _ => pauseMenu.ChangeState();
 
         crouchAction.performed += _ => StartCrouch();
         crouchAction.canceled += _ => CancelCrouch();
@@ -109,6 +113,7 @@ public class PlayerController : MonoBehaviour
         nextRoundAction.performed -= _ => enemySpawner.NextRound();
         reload.performed -= _ => playerStats.Reload();
         granadeThrow.performed -= _ => ThrowGranade();
+        pauseAction.performed -= _ => pauseMenu.ChangeState();
 
         crouchAction.performed -= _ => StartCrouch();
         crouchAction.canceled -= _ => CancelCrouch();

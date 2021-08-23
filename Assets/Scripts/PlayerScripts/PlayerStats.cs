@@ -59,6 +59,7 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth <= 0) {
             ragdollDeath.ToggleRagdoll(true);
             playerController.enabled = false;
+            GameManager.Lost = true;
         }
     }
 

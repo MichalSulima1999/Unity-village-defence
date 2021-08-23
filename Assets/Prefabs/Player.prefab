@@ -1912,7 +1912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a60849ceaa83c54b9fd073fa73ed139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
+  playerSpeed: 7
   jumpHeight: 2
   gravityValue: -9.81
   rotationSpeed: 5
@@ -1931,6 +1931,7 @@ MonoBehaviour:
   playerStats: {fileID: 3563795896013090176}
   enemySpawner: {fileID: 0}
   granadeAttack: {fileID: 3393099432066699387}
+  pauseMenu: {fileID: 0}
   crouching: 0
   aiming: 0
   recoil:
@@ -1962,12 +1963,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistolDamage: 10
   knifeDamage: 50
-  maxHealth: 100
   money: 100
+  startingMagazines: 1
+  startingGranades: 2
+  maxHealth: 100
   healthBar: {fileID: 0}
   moneyText: {fileID: 0}
   magazinesText: {fileID: 0}
   bulletText: {fileID: 0}
+  granadesText: {fileID: 0}
   infoText: {fileID: 0}
   ragdollDeath: {fileID: 4789959898760300936}
   playerController: {fileID: 3563795896013090185}
@@ -2005,6 +2009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 3563795896013090176}
   range: 20
+  cooldown: 0.35
   timeOffset: 0.25
   hand: {fileID: 3563795895912227717}
   granadePrefab: {fileID: 650689794134971452, guid: 71cd8a4f81a6e584aa57817ddef37253, type: 3}
@@ -2018,7 +2023,7 @@ Animator:
   m_GameObject: {fileID: 3563795896013090184}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2768069f52075e446af27fa20edd351a, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2d82483e3b21fe1418ce57e1d76829d5, type: 2}
+  m_Controller: {fileID: 9100000, guid: bffed55ec039c4342b4cd1ca5890bbc4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

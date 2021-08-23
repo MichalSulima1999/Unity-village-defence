@@ -30,6 +30,7 @@ public class PlayerBase : MonoBehaviour
         if(currentHealth <= 0) {
             Destroy(gameObject);
             GameManager.GameOver = true;
+            GameManager.Lost = true;
         }
     }
 

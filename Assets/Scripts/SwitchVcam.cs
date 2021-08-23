@@ -10,6 +10,11 @@ public class SwitchVcam : MonoBehaviour
     [SerializeField] private Canvas thirdPersonCanvas;
     [SerializeField] private Canvas aimCanvas;
 
+    [SerializeField] private CinemachineVirtualCamera stoppedCamera;
+
+    [SerializeField] private int stoppedCameraPriority1 = 7;
+    [SerializeField] private int stoppedCameraPriority2 = 30;
+
     private PlayerController playerController;
 
     private CinemachineVirtualCamera virtualCamera;
@@ -50,5 +55,21 @@ public class SwitchVcam : MonoBehaviour
         aimCanvas.enabled = false;
         thirdPersonCanvas.enabled = true;
         playerController.aiming = false;
+    }
+
+    private void StopCamera() {
+        stoppedCamera.Priority = stoppedCameraPriority2;
+    }
+
+    private void StartCamera() {
+        stoppedCamera.Priority = stoppedCameraPriority1;
+    }
+
+    private void Update() {
+        if(GameManager.ControlsLocked) {
+            StopCamera();
+        } else {
+            StartCamera();
+        }
     }
 }

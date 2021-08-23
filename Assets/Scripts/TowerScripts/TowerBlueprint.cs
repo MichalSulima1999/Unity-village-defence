@@ -8,7 +8,7 @@ public class TowerBlueprint : MonoBehaviour
     [SerializeField] private Vector3 colliderOffset;
     [SerializeField] private Vector3 colliderDimensions;
 
-    public bool canBuild { get; set; } = true;
+    public bool canBuild { get; set; } = false;
 
     private bool blueprintColliding = false;
 

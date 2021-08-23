@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1814273847223920542}
   - component: {fileID: 2960107650942523859}
   - component: {fileID: 5963789877558592090}
-  - component: {fileID: 4917011735079019402}
   - component: {fileID: 7987632033921542928}
   - component: {fileID: 2228169956489088136}
+  - component: {fileID: -10082352862720944}
   m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 87108d12b32d98546b154f091ee60d5f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4917011735079019402
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650689794134971452}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7987632033921542928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDecal: {fileID: 4296926087123376367, guid: 4d4685ce38be677409a66ba8486fd3a9, type: 3}
-  speed: 50
+  speed: 40
   timeToDestroy: 3
   enemyBullet: 0
   rbody: {fileID: 2228169956489088136}
@@ -130,3 +117,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &-10082352862720944
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650689794134971452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0}

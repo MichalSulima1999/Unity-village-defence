@@ -27,7 +27,7 @@ public class BulletController : MonoBehaviour
         Destroy(gameObject, timeToDestroy);
     }
 
-    private void OnCollisionEnter(Collision other) {
+    private void OnCollisionStay(Collision other) {
         if(other.gameObject.layer == 6) {
             ContactPoint contact = other.GetContact(0);
             GameObject decal = GameObject.Instantiate(bulletDecal, contact.point + contact.normal * 0.001f, Quaternion.LookRotation(contact.normal));
