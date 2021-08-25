@@ -626,7 +626,7 @@ MonoBehaviour:
   attackRange: 50
   alreadyAttacked: 0
   barrelTransform: {fileID: 2878324419222378511}
-  bulletPrefab: {fileID: 650689794134971452, guid: 3fa22a1aadd4937429c3157a59ea7717, type: 3}
+  bulletPrefab: {fileID: 3470115219051497101, guid: c5a30658d7d673048938c0cf49a30014, type: 3}
   enemyStats: {fileID: 2878324419545288042}
 --- !u!114 &2878324419545288042
 MonoBehaviour:
