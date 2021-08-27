@@ -619,6 +619,7 @@ MonoBehaviour:
   bulletGO: {fileID: 650689794134971452, guid: 899ee226fb1bec24e8cd4ac558620058, type: 3}
   turnSpeed: 1
   enemyTag: Enemy
+  sFXManager: {fileID: 7885988015816515231, guid: 0a9570861b0d3b447b6632ad1318b2a7, type: 3}
   healthBar: {fileID: 2241624479842190961}
 --- !u!65 &5154315747525615136
 BoxCollider:

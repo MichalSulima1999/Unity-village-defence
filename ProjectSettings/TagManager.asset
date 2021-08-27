@@ -10,6 +10,7 @@ TagManager:
   - EnemyBullet
   - Enemy
   - BaseHpPlayerUI
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,8 @@ public class BulletController : MonoBehaviour
     [SerializeField] protected float timeToDestroy = 3f;
     [SerializeField] protected bool enemyBullet;
 
+    [SerializeField] protected SFXManager sFXManager;
+
     [SerializeField] Rigidbody rbody;
 
     public int damage { get; set; }
@@ -35,14 +37,15 @@ public class BulletController : MonoBehaviour
         } else if(!enemyBullet && other.gameObject.CompareTag("Enemy")) {
             other.gameObject.GetComponent<EnemyStats>().takeDamage(damage);
         } else if(enemyBullet && other.gameObject.CompareTag("Player")) {
-            other.gameObject.GetComponent<PlayerStats>().takeDamage(damage);
+            other.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
         } else if (enemyBullet && other.gameObject.CompareTag("Base")) {
             other.gameObject.GetComponent<PlayerBase>().TakeDamage(damage);
         } else if (enemyBullet && other.gameObject.CompareTag("Turret")) {
             other.gameObject.GetComponent<Tower>().TakeDamage(damage);
         }
 
-        
+        Debug.Log(other.gameObject.name);
+        sFXManager.PlayShootHit(transform);
         Destroy(gameObject);
     }
 }

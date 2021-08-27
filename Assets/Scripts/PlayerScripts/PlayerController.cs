@@ -188,6 +188,7 @@ public class PlayerController : MonoBehaviour
         playerStats.UpdateBulletText();
 
         recoil.Invoke();
+        playerStats.sFXManager.PlayShootPlayer(transform);
         attackCounter = timeBetweenShooting;
     }
 

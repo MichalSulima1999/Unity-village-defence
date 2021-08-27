@@ -11,6 +11,8 @@ public class Tower : MonoBehaviour
     
     [SerializeField] private float turnSpeed;
     [SerializeField] private string enemyTag = "Enemy";
+
+    [SerializeField] private SFXManager sFXManager;
     
     public int maxHealth { get; set; }
     public int damage { get; set; }
@@ -99,6 +101,8 @@ public class Tower : MonoBehaviour
         BulletController bulletController = bullet.GetComponent<BulletController>();
         bulletController.target = target.position;
         bulletController.damage = damage;
+
+        sFXManager.PlayShootPlayer(transform);
     }
 
     public void TakeDamage(int amount) {

@@ -357,7 +357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2878324419222378510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.971}
+  m_LocalPosition: {x: 0, y: 0, z: 1.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2878324419440827710}
@@ -628,6 +628,7 @@ MonoBehaviour:
   barrelTransform: {fileID: 2878324419222378511}
   bulletPrefab: {fileID: 3470115219051497101, guid: c5a30658d7d673048938c0cf49a30014, type: 3}
   enemyStats: {fileID: 2878324419545288042}
+  soundType: 1
 --- !u!114 &2878324419545288042
 MonoBehaviour:
   m_ObjectHideFlags: 0

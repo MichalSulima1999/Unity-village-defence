@@ -174,3 +174,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleType: 0
   amount: 20
+  sFXManager: {fileID: 7885988015816515231, guid: 0a9570861b0d3b447b6632ad1318b2a7, type: 3}

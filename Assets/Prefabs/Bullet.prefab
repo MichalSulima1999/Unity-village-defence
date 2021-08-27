@@ -100,6 +100,7 @@ MonoBehaviour:
   speed: 40
   timeToDestroy: 3
   enemyBullet: 0
+  sFXManager: {fileID: 7885988015816515231, guid: 0a9570861b0d3b447b6632ad1318b2a7, type: 3}
   rbody: {fileID: 2228169956489088136}
 --- !u!54 &2228169956489088136
 Rigidbody:

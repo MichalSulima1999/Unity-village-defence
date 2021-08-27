@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7945713559242826752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7945713559242826754}
+  - component: {fileID: 7945713559242826755}
+  - component: {fileID: 7885988015816515231}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7945713559242826754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945713559242826752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7945713559242826755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945713559242826752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f40193ac79826246b4586293b01524b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winCanvas: {fileID: 0}
+  loseCanvas: {fileID: 0}
+--- !u!114 &7885988015816515231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945713559242826752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6579ff6bdffbecc41b615985a054f0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootPlayerSFX: {fileID: 4459796984800870109, guid: 056ee280c5e5b024080076112c4dd9d2, type: 3}
+  shootEnemySFX: {fileID: 488437288749938742, guid: 99fd12b781f718d42adc2fb8aaf3c020, type: 3}
+  shootHitSFX: {fileID: 818506412150423334, guid: 0f35e926f05a1dd45b4c8ab7ac2afd2b, type: 3}
+  reloadSFX: {fileID: 8107394038715311199, guid: d491e85eab387004198964ae6eac52c4, type: 3}
+  swoshSFX: {fileID: 2215246192543673814, guid: 3e3c301dd6f6fc3439ad264020a12e40, type: 3}
+  swoshHitSFX: {fileID: 2562273672377134695, guid: 2dff9af7341c92546a3141f7948aee12, type: 3}
+  emptySFX: {fileID: 3380662795197109382, guid: b566ae27ca857df46aba6bd94da976a3, type: 3}
+  granadeExplosionSFX: {fileID: 2784800536186024671, guid: abb39e68a3137da4e9dd760125d2e5c1, type: 3}
+  collectibleSFX: {fileID: 6646537533982978037, guid: 522effedf0788fb4580fc0c20ad7bbcf, type: 3}
+  buildSFX: {fileID: 6732659989953714240, guid: 49a10d95d71b87c42b0f679fe94006b2, type: 3}

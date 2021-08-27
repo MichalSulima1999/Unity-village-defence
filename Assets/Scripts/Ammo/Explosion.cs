@@ -11,7 +11,7 @@ public class Explosion : MonoBehaviour
         if (!enemyBullet && other.CompareTag("Enemy")) {
             other.GetComponent<EnemyStats>().takeDamage(damage);
         } else if (enemyBullet && other.CompareTag("Player")) {
-            other.GetComponent<PlayerStats>().takeDamage(damage);
+            other.GetComponent<PlayerStats>().TakeDamage(damage);
         } else if (enemyBullet && other.CompareTag("Base")) {
             other.GetComponent<PlayerBase>().TakeDamage(damage);
         } else if (enemyBullet && other.CompareTag("Turret")) {

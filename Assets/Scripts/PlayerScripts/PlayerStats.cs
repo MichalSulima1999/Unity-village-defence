@@ -38,6 +38,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] RagdollDeath ragdollDeath;
     [SerializeField] PlayerController playerController;
 
+    public SFXManager sFXManager { get; set; }
+
     // Start is called before the first frame update
     void Start() {
         currentHealth = maxHealth;
@@ -49,9 +51,11 @@ public class PlayerStats : MonoBehaviour
         bulletText.text = currentBullets + "/" + maxBullets;
         magazinesText.text = currentMagazines + "/" + maxMagazines;
         granadesText.text = currentGranades + "/" + maxGranades;
+
+        sFXManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SFXManager>();
     }
 
-    public void takeDamage(int amount) {
+    public void TakeDamage(int amount) {
         currentHealth -= amount;
 
         healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
@@ -89,6 +93,8 @@ public class PlayerStats : MonoBehaviour
         currentBullets = maxBullets;
         currentMagazines--;
 
+        sFXManager.PlayReload(transform);
+
         playerController.PlayReloadAnim();
         UpdateBulletText();
     }
@@ -101,6 +107,8 @@ public class PlayerStats : MonoBehaviour
             EnDisableInfoText();
             infoText.text = "RELOAD!";
             Invoke("EnDisableInfoText", 2f);
+
+            sFXManager.PlayEmpty(transform);
         }
         
         return false;

@@ -77,6 +77,8 @@ public class BuildMode : MonoBehaviour
         towerHead.GetComponent<Tower>().attackRange = playerStats.towerAttackRange;
         towerHead.GetComponent<Tower>().shootingSpeed = playerStats.towerAttackSpeed;
         playerStats.CollectMoney(-towerCost);
+
+        playerStats.sFXManager.PlayBuild(towerHead.transform);
     }
 
     void EnterBuildMode() {
