@@ -14,6 +14,8 @@ public class EnemyAttackRange : EnemyAttack
     [SerializeField] private EnemyStats enemyStats;
     [SerializeField] private RangedSound soundType;
 
+    [SerializeField] private GameObject turretHead;
+
     private SFXManager sFXManager;
 
     private void Start() {
@@ -21,6 +23,9 @@ public class EnemyAttackRange : EnemyAttack
     }
 
     public override void Attack(Transform target) {
+        if(turretHead != null)
+            turretHead.transform.LookAt(target.position);
+
         if (!alreadyAttacked) {
             GameObject bullet = Instantiate(bulletPrefab, barrelTransform.position, Quaternion.identity);
             BulletController bulletController = bullet.GetComponent<BulletController>();

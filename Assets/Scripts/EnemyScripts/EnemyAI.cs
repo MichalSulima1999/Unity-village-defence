@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float lookAtDamp = 0.3f;
     [SerializeField] private Transform sightCenter;
 
+    private Animator animator;
     private Transform lockedTarget;
     private Vector3 lastKnownPosition;
     private Transform playerBase;
@@ -37,11 +38,15 @@ public class EnemyAI : MonoBehaviour
         lockedTarget = playerBase;
 
         InvokeRepeating(nameof(UpdateTarget), 0f, 0.5f);
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("Walking", false);
+
         if (GameManager.GameOver || lockedTarget == null)
             return;
 
@@ -119,6 +124,7 @@ public class EnemyAI : MonoBehaviour
 
     private void ChaseTarget(Vector3 position) {
         agent.SetDestination(position);
+        animator.SetBool("Walking", true);
     }
     
     private void EnemyAttack() {
@@ -127,7 +133,7 @@ public class EnemyAI : MonoBehaviour
         Debug.DrawRay(transform.position, (lockedTarget.position - transform.position), Color.red);
 
         if (Physics.Raycast(ray, out hit)) {
-            Debug.Log(hit.collider.tag);
+            //Debug.Log(hit.collider.tag);
             if (hit.collider.tag == "Player" || hit.collider.tag == lockedTarget.tag) {
                 agent.SetDestination(transform.position);
 
