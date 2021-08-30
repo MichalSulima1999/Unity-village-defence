@@ -648,7 +648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3697106594837960309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.354, z: 1.85}
+  m_LocalPosition: {x: 0, y: 1.736, z: 2.574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3802299918068959749}
@@ -678,7 +678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3697106595007997146}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -10.095814, y: 1.14, z: -4.098442}
+  m_LocalPosition: {x: 0, y: 1.14, z: 81.9}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 3802299918068959749}
@@ -1406,6 +1406,7 @@ MonoBehaviour:
   - {fileID: 6569577815115453618, guid: c84913ab778839b45867d3489cc882eb, type: 3}
   - {fileID: 8171276289594879495, guid: b56957c253423af4bbcefb200b3ea74a, type: 3}
   dropChance: 30
+  timeTillDissapear: 1.5
   hpSlider: {fileID: 3697106595460219859}
   enemyNameText: {fileID: 3697106596307303204}
   enemyAI: {fileID: 4580067421927182530}

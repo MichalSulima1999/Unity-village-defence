@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class EnemyStats : MonoBehaviour
 {
@@ -11,12 +12,15 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private int moneyLoot = 10;
     [SerializeField] private GameObject[] drops;
     [SerializeField] [Range(0, 100)] private int dropChance = 50;
+    [SerializeField] private float timeTillDissapear = 1.5f;
     private int currentHealth;
 
     [SerializeField] private Slider hpSlider;
     [SerializeField] private Text enemyNameText;
 
     [SerializeField] private EnemyAI enemyAI;
+
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +29,8 @@ public class EnemyStats : MonoBehaviour
         hpSlider.maxValue = maxHealth;
         hpSlider.value = currentHealth;
         enemyNameText.text = enemyName;
+
+        animator = GetComponent<Animator>();
     }
 
     public void takeDamage(int amount) {
@@ -32,10 +38,24 @@ public class EnemyStats : MonoBehaviour
         hpSlider.value = currentHealth;
 
         if(currentHealth <= 0) {
-            enemyAI.player.GetComponent<PlayerStats>().CollectMoney(moneyLoot);
-            DropSomething();
-            Destroy(gameObject, 0.01f);
+            Die();
         }
+    }
+    
+    void Die() {
+        enemyAI.player.GetComponent<PlayerStats>().CollectMoney(moneyLoot);
+        animator.SetBool("Die", true);
+        gameObject.tag = "Untagged";
+        GetComponent<EnemyAI>().enabled = false;
+        GetComponent<EnemyAttack>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;
+
+        Invoke("DestroySelf", timeTillDissapear);
+    }
+
+    void DestroySelf() {
+        DropSomething();
+        Destroy(gameObject);
     }
 
     void DropSomething() {
