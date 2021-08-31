@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
@@ -13,9 +14,34 @@ public class EnemySpawner : MonoBehaviour
     private int currentRound = -1;
     private int waveCounter = 0;
     private bool canPlayNextRound = false;
-    private bool shopActivated = false;
 
     private int enemiesLeft = 0;
+
+    private PlayerInput playerInput;
+    private InputAction shopAction;
+
+    private void Awake() {
+        playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
+
+        shopAction = playerInput.actions["Shop"];
+    }
+
+    private void OnEnable() {
+        shopAction.performed += _ => OpenShop();
+    }
+
+    private void OnDisable() {
+        shopAction.performed -= _ => OpenShop();
+    }
+
+    void OpenShop() {
+        if (canPlayNextRound) {
+            if (!Shop.ShopActivated)
+                shop.SetActive(true);
+            else
+                shop.SetActive(false);
+        }
+    }
 
     public void NextRound() {
         if(!canPlayNextRound || shop.activeSelf)
@@ -23,7 +49,6 @@ public class EnemySpawner : MonoBehaviour
 
         currentRound++;
         waveCounter = 0;
-        shopActivated = false;
         enemiesLeft = rounds[currentRound].numberOfWaves * rounds[currentRound].numberOfEnemiesPerWave;
 
         StartCoroutine(StartWaves());
@@ -47,10 +72,6 @@ public class EnemySpawner : MonoBehaviour
 
         if (canPlayNextRound) {
             nextRoundText.enabled = true;
-
-            if(!shopActivated)
-                shop.SetActive(true);
-            shopActivated = true;
         } else {
             nextRoundText.enabled = false;
             shop.SetActive(false);

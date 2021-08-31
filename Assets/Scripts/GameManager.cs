@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     static public bool GameOver = false;
     static public bool Won = false;
     static public bool Lost = false;
-    static public bool ControlsLocked = true;
+    static public bool ControlsLocked = false;
     static public int Rounds;
     static public GameObject[] enemiesLeft;
 

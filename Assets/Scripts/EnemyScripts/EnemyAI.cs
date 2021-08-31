@@ -16,6 +16,10 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float lookAtDamp = 0.3f;
     [SerializeField] private Transform sightCenter;
 
+    private AudioSource stepSound;
+    private float stepSoundCounter = 0f;
+    [SerializeField] private float stepSoundTime = 0.4f;
+
     private Animator animator;
     private Transform lockedTarget;
     private Vector3 lastKnownPosition;
@@ -40,6 +44,8 @@ public class EnemyAI : MonoBehaviour
         InvokeRepeating(nameof(UpdateTarget), 0f, 0.5f);
 
         animator = GetComponent<Animator>();
+
+        stepSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -69,6 +75,8 @@ public class EnemyAI : MonoBehaviour
             lastKnownPosition = playerCenter.position;
             targetLost = true;
         }
+
+        stepSoundCounter -= Time.deltaTime;
     }
 
     void UpdateTarget() {
@@ -125,6 +133,11 @@ public class EnemyAI : MonoBehaviour
     private void ChaseTarget(Vector3 position) {
         agent.SetDestination(position);
         animator.SetBool("Walking", true);
+
+        if(stepSound != null && stepSoundCounter < 0) {
+            stepSound.Play();
+            stepSoundCounter = stepSoundTime;
+        }
     }
     
     private void EnemyAttack() {

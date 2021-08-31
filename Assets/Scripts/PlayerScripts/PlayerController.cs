@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PauseMenu pauseMenu;
     private BuildMode buildMode;
 
+    [SerializeField] private float stepSoundTime = 0.25f;
+    private float stepSoundCounter = 0f;
+    [SerializeField] private AudioSource stepSound;
+
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -137,9 +141,18 @@ public class PlayerController : MonoBehaviour
         move.y = 0f;
         controller.Move(move * Time.deltaTime * playerSpeed);
         // Blend Strafe Animation
+
+        stepSoundCounter -= Time.deltaTime;
+        
+
         if (groundedPlayer) {
             animator.SetFloat(moveXAnimationParameterId, currentAnimationBlendVector.x);
             animator.SetFloat(moveZAnimationParameterId, currentAnimationBlendVector.y);
+
+            if (stepSoundCounter < 0 && input.magnitude > 0) {
+                stepSound.Play();
+                stepSoundCounter = stepSoundTime;
+            }
         } else {
             animator.SetFloat(moveXAnimationParameterId, 0f);
             animator.SetFloat(moveZAnimationParameterId, 0f);
@@ -156,7 +169,7 @@ public class PlayerController : MonoBehaviour
 
         // Rotate towards camera direction
         Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);        
 
         attackCounter -= Time.deltaTime;
     }
@@ -215,6 +228,8 @@ public class PlayerController : MonoBehaviour
         knifeAttack.GetComponent<KnifeAttack>().damage = playerStats.knifeDamage;
 
         Destroy(knifeAttack, 0.1f);
+
+        playerStats.sFXManager.PlaySwosh(transform);
 
         attackCounter = timeBetweenKnifeAttack;
     }

@@ -103,12 +103,12 @@ public class PlayerStats : MonoBehaviour
         if (currentBullets > 0)
             return true;
 
-        if(infoText.gameObject.activeSelf == false) {
+        sFXManager.PlayEmpty(transform);
+
+        if (infoText.gameObject.activeSelf == false) {
             EnDisableInfoText();
             infoText.text = "RELOAD!";
             Invoke("EnDisableInfoText", 2f);
-
-            sFXManager.PlayEmpty(transform);
         }
         
         return false;

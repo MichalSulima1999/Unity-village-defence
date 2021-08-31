@@ -26,14 +26,18 @@ public class Shop : MonoBehaviour
 
     int healCost;
 
+    public static bool ShopActivated = false;
+
     private void OnEnable() {
         GameManager.ControlsLocked = true;
         Cursor.lockState = CursorLockMode.Confined;
+        ShopActivated = true;
     }
 
     private void OnDisable() {
         GameManager.ControlsLocked = false;
         Cursor.lockState = CursorLockMode.Locked;
+        ShopActivated = false;
     }
 
     // Start is called before the first frame update

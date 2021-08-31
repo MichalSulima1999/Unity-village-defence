@@ -9,6 +9,7 @@ public class KnifeAttack : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Enemy")) {
             other.GetComponent<EnemyStats>().takeDamage(damage);
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<SFXManager>().PlaySwoshHit(transform);
         }
     }
 }
