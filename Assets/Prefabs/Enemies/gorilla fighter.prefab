@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 40
   enemyName: Fighter
-  maxHealth: 100
+  maxHealth: 70
   moneyLoot: 20
   drops:
   - {fileID: 6569577815115453618, guid: c84913ab778839b45867d3489cc882eb, type: 3}
@@ -220,7 +220,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

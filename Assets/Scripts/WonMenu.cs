@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 public class WonMenu : MonoBehaviour
 {
     public void NextLevel() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void MainMenu() {
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+    }
+
+    public void Restart() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - BaseHpPlayerUI
   - GameManager
+  - Shop
   layers:
   - Default
   - TransparentFX

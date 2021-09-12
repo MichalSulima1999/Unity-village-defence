@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         Won = false;
         Lost = false;
+        ControlsLocked = false;
+        GameOver = false;
     }
 
     // Update is called once per frame
