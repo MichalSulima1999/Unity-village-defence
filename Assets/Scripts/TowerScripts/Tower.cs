@@ -13,7 +13,9 @@ public class Tower : MonoBehaviour
     [SerializeField] private string enemyTag = "Enemy";
 
     [SerializeField] private SFXManager sFXManager;
-    
+
+    [SerializeField] private TowerDestroy towerDestroy;
+
     public int maxHealth { get; set; }
     public int damage { get; set; }
     public float attackRange { get; set; }
@@ -35,6 +37,8 @@ public class Tower : MonoBehaviour
         sightRange = attackRange + 10f;
 
         healthBar.fillAmount = 1;
+
+        towerDestroy.enabled = false;
     }
 
     void UpdateTarget() {
@@ -110,7 +114,14 @@ public class Tower : MonoBehaviour
         healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
 
         if (currentHealth <= 0)
-            Destroy(parent);
+            DestroyTurret();
+    }
+
+    void DestroyTurret() {
+        towerDestroy.enabled = true;
+        this.enabled = false;
+
+        Destroy(parent, 1f);
     }
 
     private void OnDrawGizmosSelected() {

@@ -101,7 +101,6 @@ public class EnemyAI : MonoBehaviour
 
         if (nearestTarget != null && shortestDistance <= sightRange) {
             LockTarget(nearestTarget.transform);
-            //targetEnemy = nearestEnemy.GetComponent<Enemy>();
         } else {
             LockTarget(playerBase);
         }
@@ -113,7 +112,6 @@ public class EnemyAI : MonoBehaviour
         Debug.DrawRay(transform.position, (target.position - transform.position), Color.green);
 
         if(Physics.Raycast(ray, out hit)) {
-            Debug.Log(hit.collider.tag);
             if (hit.collider.tag == "Player" || hit.collider.tag == target.tag) {
                 lockedTarget = target;
                 lastKnownPosition = target.position;
@@ -146,7 +144,6 @@ public class EnemyAI : MonoBehaviour
         Debug.DrawRay(transform.position, (lockedTarget.position - transform.position), Color.red);
 
         if (Physics.Raycast(ray, out hit)) {
-            //Debug.Log(hit.collider.tag);
             if (hit.collider.tag == "Player" || hit.collider.tag == lockedTarget.tag) {
                 agent.SetDestination(transform.position);
 

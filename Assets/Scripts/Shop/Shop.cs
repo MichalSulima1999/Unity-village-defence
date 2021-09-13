@@ -71,11 +71,11 @@ public class Shop : MonoBehaviour
         item.level++;
 
         UpdateStats();
-        UpdateText();
+        UpdatePrice(item);
     }
 
     void CheckButton(ShopItem item) {
-        if (item.level >= item.statPerLevel.Length || playerStats.GetMoney() < item.pricePerLevel[item.level]) {
+        if (item.level >= item.pricePerLevel.Length || playerStats.GetMoney() < item.pricePerLevel[item.level]) {
             item.upgradeButton.interactable = false;
         } else {
             item.upgradeButton.interactable = true;
@@ -139,6 +139,19 @@ public class Shop : MonoBehaviour
         playerStats.UpgradeGranades(granade.statPerLevel[granade.level]);
         playerStats.UpgradeKnife(knife.statPerLevel[knife.level]);
         playerStats.UpgradePistol(pistol.statPerLevel[pistol.level]);
+    }
+
+    void UpdatePrice(ShopItem item) {
+        item.levelText.text = item.level + "";
+
+        if (item.level >= item.pricePerLevel.Length) {
+            item.priceText.text = "MAX";
+            return;
+        }
+
+        item.priceText.text = "$" + item.pricePerLevel[item.level];
+
+        moneyText.text = "$" + playerStats.GetMoney();
     }
 
     void UpdateText() {

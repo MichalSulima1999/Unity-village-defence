@@ -9,8 +9,7 @@ public class GameManager : MonoBehaviour
     static public bool GameOver = false;
     static public bool Won = false;
     static public bool Lost = false;
-    static public bool ControlsLocked = false;
-    static public int Rounds;
+    static public bool ControlsLocked = true;
     static public GameObject[] enemiesLeft;
 
     [SerializeField] Canvas winCanvas;
@@ -28,7 +27,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         Won = false;
         Lost = false;
-        ControlsLocked = false;
+        ControlsLocked = true;
         GameOver = false;
     }
 
@@ -41,7 +40,7 @@ public class GameManager : MonoBehaviour
         }
 
         if (Won) {
-            winCanvas.enabled = true;
+            YouWon();
         }
 
         if (Lost)
@@ -50,6 +49,13 @@ public class GameManager : MonoBehaviour
 
     void CountEnemies() {
         enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    void YouWon() {
+        winCanvas.enabled = true;
+        Cursor.lockState = CursorLockMode.None;
+        ControlsLocked = true;
+        Time.timeScale = 0f;
     }
 
     public void YouLost() {

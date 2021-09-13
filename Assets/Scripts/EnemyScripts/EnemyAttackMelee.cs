@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyAttackMelee : EnemyAttack {
 
+    [SerializeField] private float knockBackForce = 2f;
+
     [SerializeField] private SFXManager sFXManager;
     [SerializeField] private GameObject attackArea;
     [SerializeField] private Transform barrelTransform;
@@ -15,6 +17,7 @@ public class EnemyAttackMelee : EnemyAttack {
             GameObject area = Instantiate(attackArea, barrelTransform.position, barrelTransform.rotation);
             MeleeAttackArea meleeAttackArea = area.GetComponent<MeleeAttackArea>();
             meleeAttackArea.damage = enemyStats.damage;
+            meleeAttackArea.force = knockBackForce;
 
             sFXManager.PlaySwosh(transform);
 

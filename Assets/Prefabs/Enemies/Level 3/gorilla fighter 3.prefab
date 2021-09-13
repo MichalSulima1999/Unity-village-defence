@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 289587386901041003}
   - component: {fileID: -2566107458940929711}
   m_Layer: 0
-  m_Name: gorilla fighter
+  m_Name: gorilla fighter 3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289587386901041044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.995, z: -8.87}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6089821043193790343}
@@ -116,7 +116,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8
+  m_Speed: 9
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 250
@@ -166,9 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a7b3e3ec9cf37499ae50a453493542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 1.5
   attackRange: 2.5
   alreadyAttacked: 0
+  knockBackForce: 15
   sFXManager: {fileID: 7885988015816515231, guid: 0a9570861b0d3b447b6632ad1318b2a7, type: 3}
   attackArea: {fileID: 6852403780867646036, guid: 68f738c671d771045b32ed26add39e48, type: 3}
   barrelTransform: {fileID: 8294638177298499035}
@@ -186,13 +187,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6a33aef07fc4248bbb7dbf923438fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
-  enemyName: Fighter
-  maxHealth: 70
-  moneyLoot: 20
+  damage: 65
+  enemyName: Fighter Lv3
+  maxHealth: 100
+  moneyLoot: 37
   drops:
   - {fileID: 6569577815115453618, guid: c84913ab778839b45867d3489cc882eb, type: 3}
-  dropChance: 30
+  dropChance: 40
   timeTillDissapear: 1.5
   hpSlider: {fileID: 8294638178474114076}
   enemyNameText: {fileID: 8294638176951697245}

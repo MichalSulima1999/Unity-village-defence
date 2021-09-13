@@ -579,6 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3757570123202924597}
   - component: {fileID: 313244948040909396}
+  - component: {fileID: 2483079249908224413}
   - component: {fileID: 5154315747525615136}
   m_Layer: 0
   m_Name: Head
@@ -620,7 +621,22 @@ MonoBehaviour:
   turnSpeed: 1
   enemyTag: Enemy
   sFXManager: {fileID: 7885988015816515231, guid: 0a9570861b0d3b447b6632ad1318b2a7, type: 3}
+  towerDestroy: {fileID: 2483079249908224413}
   healthBar: {fileID: 2241624479842190961}
+--- !u!114 &2483079249908224413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298009302743139620}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720a86171cfb7e545ab34d82b379d085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dieRotationX: 60
+  dieSpeed: 2
 --- !u!65 &5154315747525615136
 BoxCollider:
   m_ObjectHideFlags: 0
