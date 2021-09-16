@@ -130,9 +130,9 @@ MonoBehaviour:
   speed: 50
   timeToDestroy: 6
   enemyBullet: 1
+  sFXManager: {fileID: 7885988015816515231, guid: 0a9570861b0d3b447b6632ad1318b2a7, type: 3}
   rbody: {fileID: 7817309643719454305}
   LaunchAngle: 30
-  timeToExplode: 1.5
+  timeToExplode: 0.75
   explodeParticles: {fileID: 5043666792668576360, guid: 87b4f632b40a9c64ca1b01d917b9064c, type: 3}
   explodeDamage: {fileID: 8744843918131803000, guid: 553567439ed6311418193a7ce5e967b4, type: 3}
-  sFXManager: {fileID: 7885988015816515231, guid: 0a9570861b0d3b447b6632ad1318b2a7, type: 3}

@@ -73,7 +73,6 @@ public class Tower : MonoBehaviour
         Debug.DrawRay(transform.position, (target.position - transform.position), Color.green);
 
         if (Physics.Raycast(ray, out hit)) {
-            Debug.Log(hit.collider.tag);
             if (hit.collider.tag == enemyTag) {
                 return true;
             }

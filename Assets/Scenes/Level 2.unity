@@ -3725,51 +3725,51 @@ MonoBehaviour:
   - {fileID: 1881465970}
   - {fileID: 864805110}
   rounds:
-  - numberOfEnemiesPerWave: 5
+  - numberOfEnemiesPerWave: 8
     numberOfWaves: 2
-    timeBetweenWaves: 20
+    timeBetweenWaves: 15
     enemyTypes:
     - {fileID: 7131503279417316520, guid: b23cc7a737db78c4bab9508763e646f6, type: 3}
-  - numberOfEnemiesPerWave: 7
+  - numberOfEnemiesPerWave: 8
+    numberOfWaves: 4
+    timeBetweenWaves: 15
+    enemyTypes:
+    - {fileID: 7131503279417316520, guid: b23cc7a737db78c4bab9508763e646f6, type: 3}
+    - {fileID: 4580067421927182527, guid: 78a83a40b3a822c4aa073111f5c99874, type: 3}
+  - numberOfEnemiesPerWave: 8
+    numberOfWaves: 3
+    timeBetweenWaves: 15
+    enemyTypes:
+    - {fileID: 289587386901041044, guid: 7cfdef8e3a8d1694bb605cce975b8447, type: 3}
+    - {fileID: 4580067421927182527, guid: 78a83a40b3a822c4aa073111f5c99874, type: 3}
+  - numberOfEnemiesPerWave: 11
     numberOfWaves: 4
     timeBetweenWaves: 20
     enemyTypes:
+    - {fileID: 289587386901041044, guid: 7cfdef8e3a8d1694bb605cce975b8447, type: 3}
+    - {fileID: 7131503279417316520, guid: b23cc7a737db78c4bab9508763e646f6, type: 3}
+  - numberOfEnemiesPerWave: 13
+    numberOfWaves: 4
+    timeBetweenWaves: 20
+    enemyTypes:
+    - {fileID: 289587386901041044, guid: 7cfdef8e3a8d1694bb605cce975b8447, type: 3}
     - {fileID: 7131503279417316520, guid: b23cc7a737db78c4bab9508763e646f6, type: 3}
     - {fileID: 4580067421927182527, guid: 78a83a40b3a822c4aa073111f5c99874, type: 3}
   - numberOfEnemiesPerWave: 7
     numberOfWaves: 3
-    timeBetweenWaves: 30
-    enemyTypes:
-    - {fileID: 289587386901041044, guid: 7cfdef8e3a8d1694bb605cce975b8447, type: 3}
-    - {fileID: 4580067421927182527, guid: 78a83a40b3a822c4aa073111f5c99874, type: 3}
-  - numberOfEnemiesPerWave: 9
-    numberOfWaves: 4
-    timeBetweenWaves: 35
-    enemyTypes:
-    - {fileID: 289587386901041044, guid: 7cfdef8e3a8d1694bb605cce975b8447, type: 3}
-    - {fileID: 7131503279417316520, guid: b23cc7a737db78c4bab9508763e646f6, type: 3}
-  - numberOfEnemiesPerWave: 10
-    numberOfWaves: 4
-    timeBetweenWaves: 50
-    enemyTypes:
-    - {fileID: 289587386901041044, guid: 7cfdef8e3a8d1694bb605cce975b8447, type: 3}
-    - {fileID: 7131503279417316520, guid: b23cc7a737db78c4bab9508763e646f6, type: 3}
-    - {fileID: 4580067421927182527, guid: 78a83a40b3a822c4aa073111f5c99874, type: 3}
-  - numberOfEnemiesPerWave: 5
-    numberOfWaves: 3
-    timeBetweenWaves: 30
+    timeBetweenWaves: 15
     enemyTypes:
     - {fileID: 7131503279417316520, guid: 747b58ec7891362499bb72011c71ead2, type: 3}
     - {fileID: 7131503279417316520, guid: b23cc7a737db78c4bab9508763e646f6, type: 3}
-  - numberOfEnemiesPerWave: 7
+  - numberOfEnemiesPerWave: 8
     numberOfWaves: 4
-    timeBetweenWaves: 35
+    timeBetweenWaves: 20
     enemyTypes:
     - {fileID: 4580067421927182527, guid: 78a83a40b3a822c4aa073111f5c99874, type: 3}
     - {fileID: 289587386901041044, guid: 37d34774f3eded049b7159b9a6fb72ac, type: 3}
-  - numberOfEnemiesPerWave: 8
+  - numberOfEnemiesPerWave: 9
     numberOfWaves: 4
-    timeBetweenWaves: 38
+    timeBetweenWaves: 15
     enemyTypes:
     - {fileID: 7131503279417316520, guid: 747b58ec7891362499bb72011c71ead2, type: 3}
     - {fileID: 4580067421927182527, guid: e0a128ee862d7cb469587da6c9d420de, type: 3}
@@ -8532,7 +8532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.05547287, y: 0, z: 0, w: 0.9984602}
-  m_LocalPosition: {x: 32.744286, y: 2.085038, z: -4.1284814}
+  m_LocalPosition: {x: 32.744286, y: 2.355038, z: -4.1284814}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9521,7 +9521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050149754}
   m_LocalRotation: {x: 0.05547287, y: 0, z: 0, w: 0.9984602}
-  m_LocalPosition: {x: 32.744286, y: 2.085038, z: -4.1284814}
+  m_LocalPosition: {x: 32.744286, y: 2.355038, z: -4.1284814}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1284734723}
@@ -14549,15 +14549,15 @@ MonoBehaviour:
   turret:
     pricePerLevel: 6e00000082000000
     level: 0
-    statPerLevel: 1e0000002d00000041000000
+    statPerLevel: 140000001c00000026000000
     levelText: {fileID: 1188056917}
     priceText: {fileID: 166591849}
     upgradeButton: {fileID: 1152814592}
-    turretHealth: 640000007d000000a0000000
+    turretHealth: 640000007d0000008c000000
     turretAttackSpeed:
     - 1.5
     - 1.35
-    - 1.15
+    - 1.2
     turretRange:
     - 40
     - 43
@@ -21784,7 +21784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3563795896013090181, guid: e77514508a7603747809e426769350e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.56
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 3563795896013090181, guid: e77514508a7603747809e426769350e7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23211,7 +23211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5842293200052196177}
   m_LocalRotation: {x: 0.05547287, y: 0, z: 0, w: 0.9984602}
-  m_LocalPosition: {x: 32.744286, y: 2.085038, z: -4.1284814}
+  m_LocalPosition: {x: 32.744286, y: 2.355038, z: -4.1284814}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5842293200240438011}
@@ -23481,7 +23481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5842293200419677601}
   m_LocalRotation: {x: 0.05547287, y: 0, z: 0, w: 0.9984602}
-  m_LocalPosition: {x: 32.819275, y: 2.2659924, z: -4.108312}
+  m_LocalPosition: {x: 32.819275, y: 2.5359921, z: -4.108312}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5842293200617315339}

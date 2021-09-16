@@ -50,6 +50,9 @@ public class Shop : MonoBehaviour
     }
 
     private void Update() {
+        GameManager.ControlsLocked = true;
+        Cursor.lockState = CursorLockMode.Confined;
+
         CheckButton(turret);
         CheckButton(pistol);
         CheckButton(knife);

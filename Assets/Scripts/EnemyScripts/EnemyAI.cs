@@ -129,7 +129,13 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void ChaseTarget(Vector3 position) {
-        agent.SetDestination(position);
+        NavMeshPath navMeshPath = new NavMeshPath();
+        if(agent.CalculatePath(position, navMeshPath))
+            agent.SetDestination(position);
+        else {
+            lockedTarget = playerBase;
+            agent.SetDestination(playerBase.position);
+        }
         animator.SetBool("Walking", true);
 
         if(stepSound != null && stepSoundCounter < 0) {
